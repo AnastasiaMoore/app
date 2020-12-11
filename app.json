@@ -1,0 +1,7 @@
+{
+  "name": "german-signs-classifier",
+  "description": "Road signs classifier",
+  "repository": "https://git.heroku.com/german-signs-classifier.git",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "static"]
+}
