@@ -1,16 +1,5 @@
-# -*- coding: utf-8 -*-
-"""WebApp_Streamlit.ipynb
-
-Original file is located at
-    https://colab.research.google.com/drive/1GhQilrqnaP2pGq3OBjK8OUPQhKZPEf_C
-
-Source: https://towardsdatascience.com/deploying-an-image-classification-web-app-with-python-3753c46bb79
-"""
-
 import tensorflow as tf
 model = tf.keras.models.load_model('my_model.hdf5')
-
-
 import streamlit as st
 st.write("""
          # German Street Road Sign Prediction
@@ -18,7 +7,6 @@ st.write("""
          )
 st.write("This is a simple image classification web app to classify the road signs")
 file = st.file_uploader("Please upload an image file", type=["jpg", "png"])
-
 
 import cv2
 from PIL import Image, ImageOps
@@ -43,9 +31,6 @@ else:
     st.image(image, use_column_width=True)
     prediction = import_and_predict(image, model)
     
-
-
     score = tf.nn.softmax(prediction) 
     st.write("The sign corresponds to", np.argmax(prediction), "ClassId.")
-
     st.write("Confidence:",  round(100 * np.max(score), 1), "%")
